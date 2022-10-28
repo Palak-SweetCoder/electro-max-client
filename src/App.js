@@ -1,23 +1,10 @@
-import logo from './logo.svg';
 import './App.css';
 
 function App() {
   return (
     <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.js</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
-      </header>
+      <h1>This is electro max home</h1>
+      <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Aliquid error tempora nisi! Fugit culpa rem tempore commodi architecto explicabo! Quia molestiae fugit incidunt deleniti accusamus mollitia sint nesciunt dolorum. Labore?</p>
     </div>
   );
 }
