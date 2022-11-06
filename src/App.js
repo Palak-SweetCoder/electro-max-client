@@ -1,12 +1,27 @@
+import { Route, Routes } from 'react-router-dom';
 import './App.css';
+import Blogs from './components/Blogs/Blogs';
+import Home from './components/Home/Home/Home';
+import SignIn from './components/Login/SignIn/SignIn';
+import Header from './components/Shared/Header/Header';
 
 function App() {
-  return (
-    <div className="App">
-      <h1>This is electro max home</h1>
-      <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Aliquid error tempora nisi! Fugit culpa rem tempore commodi architecto explicabo! Quia molestiae fugit incidunt deleniti accusamus mollitia sint nesciunt dolorum. Labore?</p>
-    </div>
-  );
+    return (
+        <>
+            <Header></Header>
+            <Routes>
+                <Route path="/" element={<Home></Home>}>
+                    Home
+                </Route>
+                <Route path="/blogs" element={<Blogs></Blogs>}>
+                    Blog
+                </Route>
+                <Route path="/signin" element={<SignIn></SignIn>}>
+                    Sign In
+                </Route>
+            </Routes>
+        </>
+    );
 }
 
 export default App;

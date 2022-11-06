@@ -1,0 +1,12 @@
+.brand {
+    color: #f63e7b;
+}
+
+.brand:hover {
+    color: #f63e7b;
+}
+
+.nav-link:hover {
+    color: #f63e7b;
+    transition: 0.3s;
+}
