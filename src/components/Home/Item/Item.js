@@ -1,8 +1,9 @@
 import React from 'react';
+import { Button } from 'react-bootstrap';
 import './Item.css';
 
 const Item = ({ item }) => {
-    const { name, price, description, img } = item;
+    const { name, price, description, img, quantity, supplier } = item;
 
     return (
         <div>
@@ -16,12 +17,14 @@ const Item = ({ item }) => {
                 <div className="card-body">
                     <h5 className="card-title fw-semibold">{name}</h5>
                     <p>Price: ${price}</p>
+                    <p>Quantity: {quantity}</p>
+                    <small className="supplier">Supplier: {supplier}</small>
                     <p className="card-text">{description}</p>
-                    <p className="card-text">
-                        <small className="text-muted">
-                            Last updated 3 mins ago
-                        </small>
-                    </p>
+                    <div className="text-center">
+                        <Button className="item-button px-5 py-2">
+                            Update Stock
+                        </Button>
+                    </div>
                 </div>
             </div>
         </div>

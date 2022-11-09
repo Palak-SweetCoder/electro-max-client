@@ -7,6 +7,10 @@
     color: #f63e7b;
 }
 
+.supplier {
+    color: #f63e7b;
+}
+
 .single-card img {
     width: 300px;
 }
@@ -15,4 +19,15 @@
     height: 2px;
     width: 85%;
     background-color: #7258db;
+}
+.item-button {
+    color: #f63e7b;
+    background-color: transparent;
+    border: 1px solid #f63e7b;
+}
+.item-button:hover {
+    color: white;
+    background-color: #f63e7b;
+    border: 1px solid #f63e7b;
+    transition: 0.5s;
 }
