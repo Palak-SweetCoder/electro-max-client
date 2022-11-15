@@ -1,9 +1,15 @@
 import React from 'react';
 import { Button } from 'react-bootstrap';
+import { useNavigate } from 'react-router-dom';
 import './Item.css';
 
 const Item = ({ item }) => {
-    const { name, price, description, img, quantity, supplier } = item;
+    const { id, name, price, description, img, quantity, supplier } = item;
+    const navigate = useNavigate();
+
+    const navigateToInventory = (id) => {
+        navigate(`/inventory/${id}`);
+    };
 
     return (
         <div>
@@ -21,7 +27,10 @@ const Item = ({ item }) => {
                     <small className="supplier">Supplier: {supplier}</small>
                     <p className="card-text">{description}</p>
                     <div className="text-center">
-                        <Button className="item-button px-5 py-2">
+                        <Button
+                            onClick={() => navigateToInventory(id)}
+                            className="item-button px-5 py-2"
+                        >
                             Update Stock
                         </Button>
                     </div>

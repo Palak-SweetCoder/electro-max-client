@@ -2,6 +2,7 @@ import { Route, Routes } from 'react-router-dom';
 import './App.css';
 import Blogs from './components/Blogs/Blogs';
 import Home from './components/Home/Home/Home';
+import InventoryItems from './components/InventoryItems/InventoryItems';
 import SignIn from './components/Login/SignIn/SignIn';
 import Header from './components/Shared/Header/Header';
 
@@ -13,12 +14,19 @@ function App() {
                 <Route path="/" element={<Home></Home>}>
                     Home
                 </Route>
+                <Route path="/home" element={<Home></Home>}>
+                    Home
+                </Route>
                 <Route path="/blogs" element={<Blogs></Blogs>}>
                     Blog
                 </Route>
                 <Route path="/signin" element={<SignIn></SignIn>}>
                     Sign In
                 </Route>
+                <Route
+                    path="/inventory/:itemsId"
+                    element={<InventoryItems></InventoryItems>}
+                ></Route>
             </Routes>
         </>
     );
