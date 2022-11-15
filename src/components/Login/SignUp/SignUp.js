@@ -1,24 +1,28 @@
 import React from 'react';
 import { Button, Form } from 'react-bootstrap';
 import { useNavigate } from 'react-router-dom';
-import './Signin.css';
 
-const SignIn = () => {
+const SignUp = () => {
     const navigate = useNavigate();
-
-    const navigateToSignUp = () => {
-        navigate('/signup');
+    const navigateToSignIn = () => {
+        navigate('/signin');
     };
-
     return (
         <>
             <div className="signin-bg pb-5">
-                <h2 className="text-center pt-5">Please Sign In</h2>
+                <h2 className="text-center pt-5">Please Sign Up</h2>
                 <div className="y-line mx-auto"></div>
                 <div className="form-container mx-auto mt-5 p-lg-5 rounded-4">
                     <Form>
+                        <Form.Group className="mb-3" controlId="formBasicText">
+                            <Form.Label>Your name</Form.Label>
+                            <Form.Control
+                                type="text"
+                                placeholder="Enter your name"
+                            />
+                        </Form.Group>
                         <Form.Group className="mb-3" controlId="formBasicEmail">
-                            <Form.Label>Email address</Form.Label>
+                            <Form.Label>Your email</Form.Label>
                             <Form.Control
                                 type="email"
                                 placeholder="Enter email"
@@ -29,7 +33,7 @@ const SignIn = () => {
                             className="mb-3"
                             controlId="formBasicPassword"
                         >
-                            <Form.Label>Password</Form.Label>
+                            <Form.Label>Your password</Form.Label>
                             <Form.Control
                                 type="password"
                                 placeholder="Enter password"
@@ -40,22 +44,16 @@ const SignIn = () => {
                             variant="primary"
                             type="submit"
                         >
-                            Sign in
+                            Sign up
                         </Button>
                         <div className="text-white mt-4">
                             <p>
-                                NEW TO ELECTRO MAX?{' '}
+                                ALREADY REGISTERED?{' '}
                                 <span
                                     className="register-toggler"
-                                    onClick={navigateToSignUp}
+                                    onClick={navigateToSignIn}
                                 >
-                                    PLEASE REGISTER.
-                                </span>
-                            </p>
-                            <p>
-                                FORGET YOUR PASSWORD?{' '}
-                                <span className="reset-password">
-                                    RESET PASSWORD.
+                                    PLEASE SIGN IN.
                                 </span>
                             </p>
                         </div>
@@ -66,4 +64,4 @@ const SignIn = () => {
     );
 };
 
-export default SignIn;
+export default SignUp;
