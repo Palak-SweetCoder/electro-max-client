@@ -1,4 +1,4 @@
-import React from 'react';
+import React, { useState } from 'react';
 import { Button, Form } from 'react-bootstrap';
 import { useNavigate } from 'react-router-dom';
 import './Signin.css';
@@ -35,13 +35,15 @@ const SignIn = () => {
                                 placeholder="Enter password"
                             />
                         </Form.Group>
-                        <Button
-                            className="signin-button mt-2 px-4"
-                            variant="primary"
-                            type="submit"
-                        >
-                            Sign in
-                        </Button>
+                        <div className="text-center">
+                            <Button
+                                className="signin-button mt-2 px-5"
+                                variant="primary"
+                                type="submit"
+                            >
+                                Sign in
+                            </Button>
+                        </div>
                         <div className="text-white mt-4">
                             <p>
                                 NEW TO ELECTRO MAX?{' '}
