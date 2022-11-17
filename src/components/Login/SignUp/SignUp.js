@@ -11,6 +11,7 @@ const SignUp = () => {
     const [password, setPassword] = useState('');
     const [confirmPassword, setConfirmPassword] = useState('');
     const [validationError, setValidationError] = useState('');
+    const [agree, setAgree] = useState(false);
     const navigate = useNavigate();
     let errorElement;
 
@@ -42,7 +43,7 @@ const SignUp = () => {
     };
 
     if (user) {
-        navigate('/home');
+        navigate('/');
     }
 
     if (loading) {
@@ -140,6 +141,7 @@ const SignUp = () => {
                             controlId="formBasicCheckbox"
                         >
                             <Form.Check
+                                onClick={() => setAgree(!agree)}
                                 type="checkbox"
                                 label="Accept electro max terms & conditions."
                             />
@@ -149,6 +151,7 @@ const SignUp = () => {
 
                         <div className="text-center">
                             <Button
+                                disabled={!agree}
                                 className="signin-button mt-2 px-5"
                                 variant="primary"
                                 type="submit"
