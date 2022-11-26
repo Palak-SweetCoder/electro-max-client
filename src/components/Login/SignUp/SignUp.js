@@ -4,6 +4,8 @@ import { useNavigate } from 'react-router-dom';
 import { useCreateUserWithEmailAndPassword } from 'react-firebase-hooks/auth';
 import auth from '../../../firebase.init';
 import Loading from '../../Shared/Loading/Loading';
+import SocialLogin from '../SocialLogin/SocialLogin';
+import { toast } from 'react-toastify';
 
 const SignUp = () => {
     const [name, setName] = useState('');
@@ -13,6 +15,7 @@ const SignUp = () => {
     const [validationError, setValidationError] = useState('');
     const [agree, setAgree] = useState(false);
     const navigate = useNavigate();
+    const customId = 'custom-id-yes';
     let errorElement;
 
     const [createUserWithEmailAndPassword, user, loading, error] =
@@ -43,6 +46,9 @@ const SignUp = () => {
     };
 
     if (user) {
+        toast('Signup Success!!!', {
+            toastId: customId,
+        });
         navigate('/');
     }
 
@@ -171,6 +177,7 @@ const SignUp = () => {
                             </p>
                         </div>
                     </Form>
+                    <SocialLogin></SocialLogin>
                 </div>
             </div>
         </>

@@ -2,16 +2,19 @@ import React, { useState } from 'react';
 import { Button, Form } from 'react-bootstrap';
 import { useSignInWithEmailAndPassword } from 'react-firebase-hooks/auth';
 import { useLocation, useNavigate } from 'react-router-dom';
+import { toast } from 'react-toastify';
 import auth from '../../../firebase.init';
 import Loading from '../../Shared/Loading/Loading';
+import SocialLogin from '../SocialLogin/SocialLogin';
 import './Signin.css';
 
 const SignIn = () => {
     const [email, setEmail] = useState('');
     const [password, setPassword] = useState('');
     const navigate = useNavigate();
-    let errorElement;
+    const customId = 'custom-id-yes';
     const location = useLocation();
+    let errorElement;
 
     let from = location.state?.from?.pathname || '/';
 
@@ -33,6 +36,9 @@ const SignIn = () => {
     };
 
     if (user) {
+        toast.success('Signin Success!!!', {
+            toastId: customId,
+        });
         navigate(from, { replace: true });
     }
 
@@ -115,6 +121,7 @@ const SignIn = () => {
                             </p>
                         </div>
                     </Form>
+                    <SocialLogin></SocialLogin>
                 </div>
             </div>
         </>

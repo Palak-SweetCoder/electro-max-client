@@ -1,0 +1,18 @@
+.social-line {
+    height: 1px;
+    width: 220px;
+    background-color: #f63e7b;
+}
+
+.social-button {
+    color: #f63e7b;
+    background-color: transparent;
+    border: 1px solid #f63e7b;
+}
+
+.social-button:hover {
+    color: white;
+    background-color: #f63e7b;
+    border: 1px solid #f63e7b;
+    transition: 0.5s;
+}
