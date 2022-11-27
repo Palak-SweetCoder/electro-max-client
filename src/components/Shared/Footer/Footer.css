@@ -1,0 +1,16 @@
+.footer-container {
+    background-image: linear-gradient(
+        350deg,
+        #f63e7b,
+        #f8f8f8,
+        #f8f8f8,
+        #f8f8f8,
+        #f8f8f8,
+        #f8f8f8,
+        #f8f8f8,
+        #7258db
+    );
+}
+.footer-title {
+    color: #f63e7b;
+}
