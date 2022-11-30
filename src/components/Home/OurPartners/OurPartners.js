@@ -66,7 +66,7 @@ const OurPartners = () => {
                         key={img.id}
                     >
                         <img
-                            className="rounded-5"
+                            className="rounded-5 shadow-sm"
                             width={280}
                             src={img.img}
                             alt=""
