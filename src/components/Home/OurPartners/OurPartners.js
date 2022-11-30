@@ -6,12 +6,12 @@ import './OurPartners.css';
 
 const OurPartners = () => {
     const partnerImg = [
-        { id: 1, img: 'https://i.ibb.co/dm6j0R9/headphone-1.jpg' },
-        { id: 2, img: 'https://i.ibb.co/TLnKRpL/headphone-2.jpg' },
-        { id: 3, img: 'https://i.ibb.co/cFZD4np/headphone-3.jpg' },
-        { id: 4, img: 'https://i.ibb.co/5kWyJc4/laptop-1.jpg' },
-        { id: 5, img: 'https://i.ibb.co/XYzcP90/laptop-2.jpg' },
-        { id: 6, img: 'https://i.ibb.co/16nXRvV/tab-1.jpg' },
+        { id: 1, img: 'https://i.ibb.co/2j6pJzR/apple-logo.png' },
+        { id: 2, img: 'https://i.ibb.co/jbwNKKf/alphabet-logo.png' },
+        { id: 3, img: 'https://i.ibb.co/9v0hBD0/intel-logo.png' },
+        { id: 4, img: 'https://i.ibb.co/L8wBjm8/Accenture-logo.png' },
+        { id: 5, img: 'https://i.ibb.co/BsTVPqt/meta-logo.png' },
+        { id: 6, img: 'https://i.ibb.co/L9WXbPB/spark-logo.png' },
     ];
 
     const settings = {

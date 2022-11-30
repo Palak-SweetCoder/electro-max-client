@@ -10,6 +10,13 @@ https://i.ibb.co/Psp1Yfh/tab-2.jpg
 https://i.ibb.co/rmrx4Bb/watch-1.jpg
 https://i.ibb.co/r7F9xQS/watch-2.jpg
 
+
+https://i.ibb.co/2j6pJzR/apple-logo.png
+https://i.ibb.co/jbwNKKf/alphabet-logo.png
+https://i.ibb.co/9v0hBD0/intel-logo.png
+https://i.ibb.co/L8wBjm8/Accenture-logo.png
+https://i.ibb.co/BsTVPqt/meta-logo.png
+https://i.ibb.co/L9WXbPB/spark-logo.png
 */
 
 /*
