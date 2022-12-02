@@ -12,7 +12,7 @@ const Item = ({ item }) => {
     };
 
     return (
-        <div>
+        <div className="mb-5">
             <div className="card single-card ms-lg-auto mx-sm-auto">
                 <img
                     src={img}
