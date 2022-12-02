@@ -1,0 +1,13 @@
+.counter-bg {
+    background-color: #f8f8f9;
+}
+
+.counter-header {
+    color: #f63e7b;
+    font-size: 35px;
+}
+
+.counter-number {
+    color: #7258db;
+    font-size: 55px;
+}

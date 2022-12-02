@@ -52,28 +52,30 @@ const OurPartners = () => {
 
     return (
         <>
-            <h2 className="fw-semibold text-center mt-5 items-header">
-                OUR PARTNERS
-            </h2>
-            <div className="y-line mx-auto"></div>
-            <Slider
-                className="carousel-container w-75 mx-auto mt-5 mb-5"
-                {...settings}
-            >
-                {partnerImg.map((img) => (
-                    <div
-                        className="d-flex justify-content-center p-3"
-                        key={img.id}
-                    >
-                        <img
-                            className="rounded-5 shadow-sm"
-                            width={280}
-                            src={img.img}
-                            alt=""
-                        />
-                    </div>
-                ))}
-            </Slider>
+            <div className="pb-4 pt-5">
+                <h2 className="fw-semibold text-center items-header">
+                    OUR PARTNERS
+                </h2>
+                <div className="y-line mx-auto"></div>
+                <Slider
+                    className="carousel-container w-75 mx-auto mt-5 mb-5"
+                    {...settings}
+                >
+                    {partnerImg.map((img) => (
+                        <div
+                            className="d-flex justify-content-center p-3"
+                            key={img.id}
+                        >
+                            <img
+                                className="rounded-5 shadow-sm"
+                                width={280}
+                                src={img.img}
+                                alt=""
+                            />
+                        </div>
+                    ))}
+                </Slider>
+            </div>
         </>
     );
 };
