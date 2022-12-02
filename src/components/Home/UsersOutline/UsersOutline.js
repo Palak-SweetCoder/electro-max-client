@@ -10,7 +10,7 @@ const UsersOutline = () => {
         <>
             <div>
                 <h2 className="fw-semibold text-center mt-5 items-header">
-                    OUR USER'S OUTLINE.
+                    OUR MANAGEMENT OUTLINE.
                 </h2>
                 <div className="y-line mx-auto"></div>
                 <ScrollTrigger
