@@ -4,7 +4,7 @@ import { useNavigate } from 'react-router-dom';
 import './Item.css';
 
 const Item = ({ item }) => {
-    const { id, name, price, description, img, quantity, supplier } = item;
+    const { _id, name, price, description, img, quantity, supplier } = item;
     const navigate = useNavigate();
 
     const navigateToInventory = (id) => {
@@ -28,7 +28,7 @@ const Item = ({ item }) => {
                     <p className="card-text">{description}</p>
                     <div className="text-center">
                         <Button
-                            onClick={() => navigateToInventory(id)}
+                            onClick={() => navigateToInventory(_id)}
                             className="item-button px-5 py-2"
                         >
                             Update Stock

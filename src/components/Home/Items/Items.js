@@ -7,7 +7,7 @@ const Items = () => {
     const homeItems = items.slice(0, 6);
 
     useEffect(() => {
-        fetch('fakedb.json')
+        fetch('http://localhost:5000/items')
             .then((res) => res.json())
             .then((data) => setItems(data));
     }, []);
@@ -21,7 +21,7 @@ const Items = () => {
                 <div className="container mt-5 mb-5">
                     <div className=" row row-cols-lg-3 row-cols-md-2 g-4">
                         {homeItems.map((item) => (
-                            <Item item={item} key={item.id}></Item>
+                            <Item item={item} key={item._id}></Item>
                         ))}
                     </div>
                 </div>
