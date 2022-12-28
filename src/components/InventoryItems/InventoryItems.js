@@ -7,7 +7,7 @@ const InventoryItems = () => {
     const { img, price, name, supplier, description, quantity } = item;
 
     useEffect(() => {
-        const url = `http://localhost:5000/items/${itemsId}`;
+        const url = `https://electro-max-server.up.railway.app/items/${itemsId}`;
         fetch(url)
             .then((res) => res.json())
             .then((items) => setItem(items));
@@ -17,7 +17,7 @@ const InventoryItems = () => {
         const productQuantity = { quantity: quantity - 1 };
 
         // send data to the server side
-        const url = `http://localhost:5000/items/${itemsId}`;
+        const url = `https://electro-max-server.up.railway.app/items/${itemsId}`;
         fetch(url, {
             method: 'PUT',
             headers: {

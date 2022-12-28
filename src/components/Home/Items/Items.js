@@ -7,7 +7,7 @@ const Items = () => {
     const homeItems = items.slice(0, 6);
 
     useEffect(() => {
-        fetch('http://localhost:5000/items')
+        fetch('https://electro-max-server.up.railway.app/items')
             .then((res) => res.json())
             .then((data) => setItems(data));
     }, []);
