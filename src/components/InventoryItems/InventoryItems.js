@@ -1,4 +1,5 @@
 import React, { useEffect, useState } from 'react';
+import { Button, Form } from 'react-bootstrap';
 import { useParams } from 'react-router-dom';
 
 const InventoryItems = () => {
@@ -11,7 +12,7 @@ const InventoryItems = () => {
         fetch(url)
             .then((res) => res.json())
             .then((items) => setItem(items));
-    }, [item]);
+    }, [item, itemsId]);
 
     const reduceQuantity = () => {
         const productQuantity = { quantity: quantity - 1 };
@@ -50,7 +51,9 @@ const InventoryItems = () => {
                                 <p className="card-text">{description}</p>
                                 <p>Price: ${price}</p>
                                 <p>Supplier: {supplier}</p>
-                                <p>quantity: {quantity}</p>
+                                <p className="fs-5 fw-semibold">
+                                    Quantity: {quantity}
+                                </p>
                                 <button
                                     onClick={reduceQuantity}
                                     className="item-button rounded-pill px-3 py-2"
@@ -60,6 +63,31 @@ const InventoryItems = () => {
                             </div>
                         </div>
                     </div>
+                </div>
+            </div>
+            <div className="p-2 mb-4">
+                <div className="form-container mx-auto p-lg-5 rounded-4">
+                    <Form>
+                        <Form.Group
+                            className="mb-3 text-center"
+                            controlId="formBasicEmail"
+                        >
+                            <Form.Label>Restock Item</Form.Label>
+                            <Form.Control
+                                type="text"
+                                placeholder="Input your quantity"
+                            />
+                        </Form.Group>
+                        <div className="text-center">
+                            <Button
+                                className="signin-button mt-2 px-5"
+                                variant="primary"
+                                type="submit"
+                            >
+                                Restock
+                            </Button>
+                        </div>
+                    </Form>
                 </div>
             </div>
         </>
