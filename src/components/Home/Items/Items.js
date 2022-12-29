@@ -1,19 +1,14 @@
-import React, { useEffect, useState } from 'react';
+import React from 'react';
 import { Button } from 'react-bootstrap';
 import { useNavigate } from 'react-router-dom';
+import useItems from '../../../hooks/useItems';
 import Item from '../Item/Item';
 import './Items.css';
 
 const Items = () => {
     const navigate = useNavigate();
-    const [items, setItems] = useState([]);
+    const [items] = useItems([]);
     const homeItems = items.slice(0, 6);
-
-    useEffect(() => {
-        fetch('https://electro-max-server.up.railway.app/items')
-            .then((res) => res.json())
-            .then((data) => setItems(data));
-    }, []);
 
     const navigateToManageInventories = () => {
         navigate('/manage-inventories');

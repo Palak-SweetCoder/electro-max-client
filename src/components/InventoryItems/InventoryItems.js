@@ -70,6 +70,7 @@ const InventoryItems = () => {
                     <div className="row g-0">
                         <div className="col-md-4">
                             <img
+                                width={250}
                                 src={img}
                                 className="img-fluid rounded-start"
                                 alt="..."
