@@ -7,6 +7,7 @@ const InventoryItems = () => {
     const [item, setItem] = useState({});
     const { img, price, name, supplier, description, quantity } = item;
 
+    // To load specific data depending on specific id
     useEffect(() => {
         const url = `https://electro-max-server.up.railway.app/items/${itemsId}`;
         fetch(url)
@@ -14,10 +15,11 @@ const InventoryItems = () => {
             .then((items) => setItem(items));
     }, [item, itemsId]);
 
+    // Reduce quantity by one from previous quantity value
     const reduceQuantity = () => {
         const productQuantity = { quantity: quantity - 1 };
 
-        // send data to the server side
+        // send updated quantity to the server
         const url = `https://electro-max-server.up.railway.app/items/${itemsId}`;
         fetch(url, {
             method: 'PUT',
@@ -30,6 +32,29 @@ const InventoryItems = () => {
             .then((data) => {
                 setItem(data);
                 alert('Quantity updated!!!');
+            });
+    };
+
+    // Add or increase quantity with previous value
+    const increaseQuantity = (e) => {
+        e.preventDefault();
+        const newStockValue = parseInt(e.target.restock.value);
+        const updatedStock = { quantity: quantity + newStockValue };
+
+        //Send restock value to the server
+        const url = `https://electro-max-server.up.railway.app/items/${itemsId}`;
+        fetch(url, {
+            method: 'PUT',
+            headers: {
+                'content-type': 'application/json',
+            },
+            body: JSON.stringify(updatedStock),
+        })
+            .then((res) => res.json())
+            .then((data) => {
+                setItem(data);
+                alert('Item restocked!!!');
+                e.target.reset();
             });
     };
 
@@ -67,7 +92,7 @@ const InventoryItems = () => {
             </div>
             <div className="p-2 mb-4">
                 <div className="form-container mx-auto p-lg-5 rounded-4">
-                    <Form>
+                    <Form onSubmit={increaseQuantity}>
                         <Form.Group
                             className="mb-3 text-center"
                             controlId="formBasicEmail"
@@ -75,6 +100,7 @@ const InventoryItems = () => {
                             <Form.Label>Restock Item</Form.Label>
                             <Form.Control
                                 type="text"
+                                name="restock"
                                 placeholder="Input your quantity"
                             />
                         </Form.Group>
