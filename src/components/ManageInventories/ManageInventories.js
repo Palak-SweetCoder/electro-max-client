@@ -3,7 +3,25 @@ import { Button } from 'react-bootstrap';
 import useItems from '../../hooks/useItems';
 
 const ManageInventories = () => {
-    const [items] = useItems([]);
+    const [items, setItems] = useItems([]);
+
+    const deleteItem = (id) => {
+        const proceed = window.confirm(
+            'Are you sure you want to delete this item?'
+        );
+        if (proceed) {
+            const url = `http://localhost:5000/item/${id}`;
+            fetch(url, {
+                method: 'DELETE',
+            })
+                .then((res) => res.json())
+                .then((data) => {
+                    console.log(data);
+                    const remaining = items.filter((item) => item._id !== id);
+                    setItems(remaining);
+                });
+        }
+    };
 
     return (
         <>
@@ -38,7 +56,10 @@ const ManageInventories = () => {
                                     <p className="fs-5 fw-semibold">
                                         Quantity: {item.quantity}
                                     </p>
-                                    <Button className="item-button rounded-pill px-4 py-2">
+                                    <Button
+                                        onClick={() => deleteItem(item._id)}
+                                        className="item-button rounded-pill px-4 py-2"
+                                    >
                                         Delete
                                     </Button>
                                 </div>
