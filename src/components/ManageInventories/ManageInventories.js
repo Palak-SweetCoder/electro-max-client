@@ -1,16 +1,18 @@
 import React from 'react';
 import { Button } from 'react-bootstrap';
+import { useNavigate } from 'react-router-dom';
 import useItems from '../../hooks/useItems';
 
 const ManageInventories = () => {
     const [items, setItems] = useItems([]);
+    const navigate = useNavigate();
 
     const deleteItem = (id) => {
         const proceed = window.confirm(
             'Are you sure you want to delete this item?'
         );
         if (proceed) {
-            const url = `http://localhost:5000/item/${id}`;
+            const url = `https://electro-max-server.up.railway.app/item/${id}`;
             fetch(url, {
                 method: 'DELETE',
             })
@@ -23,6 +25,10 @@ const ManageInventories = () => {
         }
     };
 
+    const navigateToAddNewItem = () => {
+        navigate('/add-item');
+    };
+
     return (
         <>
             <div className="container mt-4 mb-4">
@@ -32,6 +38,14 @@ const ManageInventories = () => {
                         All inventory items: {items.length}
                     </h2>
                     <div className="y-line mx-auto"></div>
+                    <div className="text-center m-4">
+                        <Button
+                            onClick={navigateToAddNewItem}
+                            className="signin-button px-5 fw-semibold"
+                        >
+                            Add new item
+                        </Button>
+                    </div>
                 </div>
 
                 {items.map((item) => (

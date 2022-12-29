@@ -123,3 +123,45 @@ JSON DATA
     },
 ];
 */
+
+// Removed JSON
+/*
+[
+    {
+        "quantity": '94',
+        "name": 'Mini com RX-779',
+        "supplier": 'Lamont Leffler',
+        "price": '1920',
+        "description":
+            'This is like a mini computer with 7000mah battery and snapdragon 9987 ultra boost processor. With higher multitasking ability.',
+        "img": 'https://i.ibb.co/16nXRvV/tab-1.jpg',
+    },
+    {
+        "quantity": '69',
+        "name": 'STUDY locker tab 6589',
+        "supplier": 'Maxie Hauck',
+        "price": '1280',
+        "description":
+            'Specially for students with higher 8000mah battery life and 8gb ram that will make your study more faster and boost your position.',
+        "img": 'https://i.ibb.co/Psp1Yfh/tab-2.jpg',
+    },
+    {
+        "quantity": '82',
+        "name": 'ELECTRO self tracker',
+        "supplier": 'Maida Kirlin',
+        "price": '680',
+        "description":
+            'This is a smart watch with global positioning and health tracker functionality. Also, awesome time and date feature.',
+        "img": 'https://i.ibb.co/rmrx4Bb/watch-1.jpg',
+    },
+    {
+        "quantity": '59',
+        "name": 'SAMSUNG super G21',
+        "supplier": 'Ressie Rutherford',
+        "price": '700',
+        "description":
+            'Solar system and highest quality footstep tracker and heartbeat tracker. With ultra power saving system and calling system',
+        "img": 'https://i.ibb.co/r7F9xQS/watch-2.jpg',
+    },
+];
+*/
