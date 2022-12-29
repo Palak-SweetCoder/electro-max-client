@@ -6,6 +6,7 @@ import InventoryItems from './components/InventoryItems/InventoryItems';
 import RequireAuth from './components/Login/RequireAuth/RequireAuth';
 import SignIn from './components/Login/SignIn/SignIn';
 import SignUp from './components/Login/SignUp/SignUp';
+import ManageInventories from './components/ManageInventories/ManageInventories';
 import Footer from './components/Shared/Footer/Footer';
 import Header from './components/Shared/Header/Header';
 
@@ -37,6 +38,12 @@ function App() {
                         </RequireAuth>
                     }
                 ></Route>
+                <Route
+                    path="/manage-inventories"
+                    element={<ManageInventories></ManageInventories>}
+                >
+                    Manage Inventories
+                </Route>
             </Routes>
             <Footer></Footer>
         </>

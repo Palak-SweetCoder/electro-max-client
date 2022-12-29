@@ -1,8 +1,11 @@
 import React, { useEffect, useState } from 'react';
+import { Button } from 'react-bootstrap';
+import { useNavigate } from 'react-router-dom';
 import Item from '../Item/Item';
 import './Items.css';
 
 const Items = () => {
+    const navigate = useNavigate();
     const [items, setItems] = useState([]);
     const homeItems = items.slice(0, 6);
 
@@ -11,6 +14,11 @@ const Items = () => {
             .then((res) => res.json())
             .then((data) => setItems(data));
     }, []);
+
+    const navigateToManageInventories = () => {
+        navigate('/manage-inventories');
+    };
+
     return (
         <>
             <div id="items">
@@ -25,6 +33,14 @@ const Items = () => {
                         ))}
                     </div>
                 </div>
+            </div>
+            <div className="text-center">
+                <Button
+                    onClick={navigateToManageInventories}
+                    className="signin-button px-5 fw-semibold"
+                >
+                    Manage Inventories
+                </Button>
             </div>
         </>
     );

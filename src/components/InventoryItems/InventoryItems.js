@@ -1,9 +1,10 @@
 import React, { useEffect, useState } from 'react';
 import { Button, Form } from 'react-bootstrap';
-import { useParams } from 'react-router-dom';
+import { useNavigate, useParams } from 'react-router-dom';
 
 const InventoryItems = () => {
     const { itemsId } = useParams();
+    const navigate = useNavigate();
     const [item, setItem] = useState({});
     const { img, price, name, supplier, description, quantity } = item;
 
@@ -56,6 +57,10 @@ const InventoryItems = () => {
                 alert('Item restocked!!!');
                 e.target.reset();
             });
+    };
+
+    const navigateToManageInventories = () => {
+        navigate('/manage-inventories');
     };
 
     return (
@@ -115,6 +120,14 @@ const InventoryItems = () => {
                         </div>
                     </Form>
                 </div>
+            </div>
+            <div className="text-center m-5 p-3">
+                <Button
+                    onClick={navigateToManageInventories}
+                    className="signin-button px-5 fw-semibold"
+                >
+                    Manage Inventories
+                </Button>
             </div>
         </>
     );

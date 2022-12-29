@@ -27,14 +27,21 @@ const Header = () => {
                         id="responsive-navbar-nav"
                     >
                         <Nav className="ms-auto me-5">
-                            <Nav.Link className="me-5 nav-link" href="/blogs">
-                                Blog
-                            </Nav.Link>
                             <Nav.Link
                                 className="me-5 nav-link"
                                 href="home#items"
                             >
                                 Items
+                            </Nav.Link>
+
+                            <Nav.Link
+                                className="me-5 nav-link"
+                                href="/manage-inventories"
+                            >
+                                Manage Inventories
+                            </Nav.Link>
+                            <Nav.Link className="me-5 nav-link" href="/blogs">
+                                Blog
                             </Nav.Link>
                             {user ? (
                                 <Button
