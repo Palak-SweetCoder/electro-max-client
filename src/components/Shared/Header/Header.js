@@ -54,6 +54,16 @@ const Header = () => {
                             ) : (
                                 <div></div>
                             )}
+                            {user ? (
+                                <Nav.Link
+                                    className="me-5 nav-link"
+                                    href="/my-items"
+                                >
+                                    My Items
+                                </Nav.Link>
+                            ) : (
+                                <div></div>
+                            )}
                             <Nav.Link className="me-5 nav-link" href="/blogs">
                                 Blog
                             </Nav.Link>

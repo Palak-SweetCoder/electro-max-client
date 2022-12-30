@@ -8,6 +8,7 @@ import RequireAuth from './components/Login/RequireAuth/RequireAuth';
 import SignIn from './components/Login/SignIn/SignIn';
 import SignUp from './components/Login/SignUp/SignUp';
 import ManageInventories from './components/ManageInventories/ManageInventories';
+import MyItems from './components/MyItems/MyItems';
 import Footer from './components/Shared/Footer/Footer';
 import Header from './components/Shared/Header/Header';
 
@@ -54,6 +55,15 @@ function App() {
                     element={
                         <RequireAuth>
                             <AddItems></AddItems>
+                        </RequireAuth>
+                    }
+                ></Route>
+
+                <Route
+                    path="/my-items"
+                    element={
+                        <RequireAuth>
+                            <MyItems></MyItems>
                         </RequireAuth>
                     }
                 ></Route>

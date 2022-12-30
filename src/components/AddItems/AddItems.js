@@ -25,7 +25,8 @@ const AddItems = () => {
             img,
         };
         console.log(item);
-        //send data to the server side
+
+        //send data to the server side items collection
         fetch('https://electro-max-server.up.railway.app/items', {
             method: 'POST',
             headers: {
@@ -37,6 +38,20 @@ const AddItems = () => {
             .then((data) => {
                 console.log('data send succes', data);
                 alert('Item added successfully!!!');
+                e.target.reset();
+            });
+
+        //send data to the server side my-items collection
+        fetch('https://electro-max-server.up.railway.app/my-items/', {
+            method: 'POST',
+            headers: {
+                'content-type': 'application/json',
+            },
+            body: JSON.stringify(item),
+        })
+            .then((res) => res.json())
+            .then((data) => {
+                console.log('data send succes', data);
                 e.target.reset();
             });
     };
