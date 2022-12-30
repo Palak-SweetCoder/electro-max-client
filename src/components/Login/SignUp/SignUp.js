@@ -19,7 +19,9 @@ const SignUp = () => {
     let errorElement;
 
     const [createUserWithEmailAndPassword, user, loading, error] =
-        useCreateUserWithEmailAndPassword(auth);
+        useCreateUserWithEmailAndPassword(auth, {
+            sendEmailVerification: true,
+        });
 
     const navigateToSignIn = () => {
         navigate('/signin');

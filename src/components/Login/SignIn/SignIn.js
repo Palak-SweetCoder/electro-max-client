@@ -1,8 +1,11 @@
 import React, { useState } from 'react';
 import { Button, Form } from 'react-bootstrap';
-import { useSignInWithEmailAndPassword } from 'react-firebase-hooks/auth';
+import {
+    useSendPasswordResetEmail,
+    useSignInWithEmailAndPassword,
+} from 'react-firebase-hooks/auth';
 import { useLocation, useNavigate } from 'react-router-dom';
-import { toast } from 'react-toastify';
+import { toast, ToastContainer } from 'react-toastify';
 import auth from '../../../firebase.init';
 import Loading from '../../Shared/Loading/Loading';
 import SocialLogin from '../SocialLogin/SocialLogin';
@@ -20,6 +23,16 @@ const SignIn = () => {
 
     const [signInWithEmailAndPassword, user, loading, error] =
         useSignInWithEmailAndPassword(auth);
+
+    const [sendPasswordResetEmail, sending] = useSendPasswordResetEmail(auth);
+    const resetPassword = async () => {
+        if (email) {
+            await sendPasswordResetEmail(email);
+            toast.success('Password reset email sent, please check you inbox.');
+        } else {
+            toast.warn('Please enter a valid email address');
+        }
+    };
 
     const navigateToSignUp = () => {
         navigate('/signup');
@@ -42,7 +55,7 @@ const SignIn = () => {
         navigate(from, { replace: true });
     }
 
-    if (loading) {
+    if (loading || sending) {
         return (
             <div className="text-center m-5 p-5">
                 <Loading></Loading>
@@ -115,13 +128,17 @@ const SignIn = () => {
                             </p>
                             <p>
                                 FORGET YOUR PASSWORD?{' '}
-                                <span className="reset-password">
+                                <span
+                                    className="reset-password"
+                                    onClick={resetPassword}
+                                >
                                     RESET PASSWORD.
                                 </span>
                             </p>
                         </div>
                     </Form>
                     <SocialLogin></SocialLogin>
+                    <ToastContainer></ToastContainer>
                 </div>
             </div>
         </>
