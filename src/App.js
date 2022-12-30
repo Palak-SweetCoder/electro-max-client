@@ -11,6 +11,7 @@ import ManageInventories from './components/ManageInventories/ManageInventories'
 import MyItems from './components/MyItems/MyItems';
 import Footer from './components/Shared/Footer/Footer';
 import Header from './components/Shared/Header/Header';
+import NotFound from './components/Shared/NotFound/NotFound';
 
 function App() {
     return (
@@ -67,6 +68,7 @@ function App() {
                         </RequireAuth>
                     }
                 ></Route>
+                <Route path="*" element={<NotFound></NotFound>}></Route>
             </Routes>
             <Footer></Footer>
         </>
