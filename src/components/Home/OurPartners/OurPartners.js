@@ -68,7 +68,7 @@ const OurPartners = () => {
                         >
                             <img
                                 className="rounded-5 shadow-sm"
-                                width={280}
+                                width={250}
                                 src={img.img}
                                 alt=""
                             />
