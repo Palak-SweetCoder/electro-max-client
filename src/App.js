@@ -24,7 +24,7 @@ function App() {
                     Home
                 </Route>
                 <Route path="/blogs" element={<Blogs></Blogs>}>
-                    Blog
+                    Blogs
                 </Route>
                 <Route path="/signin" element={<SignIn></SignIn>}>
                     Sign In
