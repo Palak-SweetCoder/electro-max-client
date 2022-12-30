@@ -11,6 +11,17 @@
         #7258db
     );
 }
+
 .footer-title {
     color: #f63e7b;
+}
+
+.icon-width {
+    width: 20px;
+    height: 20px;
+    color: #7258db;
+}
+
+.btn-color {
+    color: #7258db;
 }
