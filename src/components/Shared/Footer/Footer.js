@@ -20,7 +20,8 @@ const Footer = () => {
                         </p>
                     </div>
 
-                    {/* company section  */}
+                    {/* ---------------company section-----------------  */}
+
                     <div className="d-flex flex-column align-items-baseline p-2">
                         <h3 className="footer-title">COMPANY</h3>
                         <Button
@@ -49,7 +50,8 @@ const Footer = () => {
                         </Button>
                     </div>
 
-                    {/* Follow us section  */}
+                    {/* ------------------Follow us section----------------  */}
+
                     <div className="p-2">
                         <h3 className="footer-title">FOLLOW US ON</h3>
                         <div className="">

@@ -1,4 +1,4 @@
-import React, { useState } from 'react';
+import React, { useEffect, useState } from 'react';
 import { Button, Form } from 'react-bootstrap';
 import {
     useSendPasswordResetEmail,
@@ -23,7 +23,6 @@ const SignIn = () => {
 
     const [signInWithEmailAndPassword, user, loading, error] =
         useSignInWithEmailAndPassword(auth);
-
     const [sendPasswordResetEmail, sending] = useSendPasswordResetEmail(auth);
     const resetPassword = async () => {
         if (email) {
@@ -48,12 +47,14 @@ const SignIn = () => {
         setPassword(password);
     };
 
-    if (user) {
-        toast.success('Signin Success!!!', {
-            toastId: customId,
-        });
-        navigate(from, { replace: true });
-    }
+    useEffect(() => {
+        if (user) {
+            toast.success('Signin Success!!!', {
+                toastId: customId,
+            });
+            navigate(from, { replace: true });
+        }
+    }, [user, from, navigate]);
 
     if (loading || sending) {
         return (
@@ -106,7 +107,9 @@ const SignIn = () => {
                                 placeholder="Enter password"
                             />
                         </Form.Group>
+
                         {errorElement}
+
                         <div className="text-center">
                             <Button
                                 className="signin-button mt-2 px-5"
@@ -137,7 +140,9 @@ const SignIn = () => {
                             </p>
                         </div>
                     </Form>
+
                     <SocialLogin></SocialLogin>
+
                     <ToastContainer></ToastContainer>
                 </div>
             </div>

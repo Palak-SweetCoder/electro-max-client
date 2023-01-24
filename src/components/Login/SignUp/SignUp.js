@@ -1,7 +1,10 @@
-import React, { useState } from 'react';
+import React, { useEffect, useState } from 'react';
 import { Button, Form } from 'react-bootstrap';
 import { useNavigate } from 'react-router-dom';
-import { useCreateUserWithEmailAndPassword } from 'react-firebase-hooks/auth';
+import {
+    useCreateUserWithEmailAndPassword,
+    useUpdateProfile,
+} from 'react-firebase-hooks/auth';
 import auth from '../../../firebase.init';
 import Loading from '../../Shared/Loading/Loading';
 import SocialLogin from '../SocialLogin/SocialLogin';
@@ -22,6 +25,8 @@ const SignUp = () => {
         useCreateUserWithEmailAndPassword(auth, {
             sendEmailVerification: true,
         });
+
+    const [updateProfile, updating, updateError] = useUpdateProfile(auth);
 
     const navigateToSignIn = () => {
         navigate('/signin');
@@ -47,14 +52,16 @@ const SignUp = () => {
         setConfirmPassword(confirmPassword);
     };
 
-    if (user) {
-        toast('Signup Success!!!', {
-            toastId: customId,
-        });
-        navigate('/');
-    }
+    useEffect(() => {
+        if (user) {
+            toast('Signup Success!!!', {
+                toastId: customId,
+            });
+            navigate('/');
+        }
+    }, [user]);
 
-    if (loading) {
+    if (loading || updating) {
         return (
             <div className="text-center m-5 p-5">
                 <Loading></Loading>
@@ -62,17 +69,18 @@ const SignUp = () => {
         );
     }
 
-    if (error || validationError) {
+    if (error || validationError || updateError) {
         errorElement = (
             <div>
                 <p className="text-danger">
-                    Error: {error?.message} {validationError}
+                    Error: {error?.message} {validationError}{' '}
+                    {updateError?.message}
                 </p>
             </div>
         );
     }
 
-    const handleCreateUser = (e) => {
+    const handleCreateUser = async (e) => {
         e.preventDefault();
         if (password !== confirmPassword) {
             setValidationError(
@@ -86,7 +94,8 @@ const SignUp = () => {
             );
             return;
         }
-        createUserWithEmailAndPassword(email, password);
+        await createUserWithEmailAndPassword(email, password);
+        await updateProfile({ displayName: name });
     };
 
     return (

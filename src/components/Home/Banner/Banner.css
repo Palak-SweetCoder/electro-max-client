@@ -1,5 +1,4 @@
 .banner {
-    /* background-color: #f8f8f8; */
     background-image: linear-gradient(
         350deg,
         #7258db,
@@ -13,7 +12,7 @@
     );
 }
 
-/* banner responsive for mobile devices */
+/* -----------responsive for mobile devices----------- */
 @media screen and (min-width: 0px) and (max-width: 576px) {
     .banner-container {
         display: flex;
@@ -24,7 +23,7 @@
         width: 250px;
     }
 }
-/* banner responsive for tablet devices */
+/* ----------responsive for tablet devices----------- */
 @media screen and (min-width: 576px) and (max-width: 980px) {
     .banner-container {
         display: flex;

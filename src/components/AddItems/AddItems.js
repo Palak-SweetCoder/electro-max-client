@@ -27,7 +27,7 @@ const AddItems = () => {
         console.log(item);
 
         //send data to the server side items collection
-        fetch('https://electro-max-server.up.railway.app/items', {
+        fetch('http://localhost:5000/items', {
             method: 'POST',
             headers: {
                 'content-type': 'application/json',
@@ -42,7 +42,7 @@ const AddItems = () => {
             });
 
         //send data to the server side my-items collection
-        fetch('https://electro-max-server.up.railway.app/my-items/', {
+        fetch('http://localhost:5000/my-items/', {
             method: 'POST',
             headers: {
                 'content-type': 'application/json',

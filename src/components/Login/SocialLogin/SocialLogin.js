@@ -1,4 +1,4 @@
-import React from 'react';
+import React, { useEffect } from 'react';
 import './SocialLogin.css';
 import { ImGoogle } from 'react-icons/im';
 import { useSignInWithGoogle } from 'react-firebase-hooks/auth';
@@ -16,12 +16,14 @@ const SocialLogin = () => {
 
     let from = location.state?.from?.pathname || '/';
 
-    if (user) {
-        toast.success('Google Signin Success!!!', {
-            toastId: customId,
-        });
-        navigate(from, { replace: true });
-    }
+    useEffect(() => {
+        if (user) {
+            toast.success('Google Signin Success!!!', {
+                toastId: customId,
+            });
+            navigate(from, { replace: true });
+        }
+    }, [user, from, navigate]);
 
     if (loading) {
         return (

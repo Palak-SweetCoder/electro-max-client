@@ -1,6 +1,7 @@
 import React, { useEffect, useState } from 'react';
 import { Button, Form } from 'react-bootstrap';
 import { useNavigate, useParams } from 'react-router-dom';
+import swal from 'sweetalert';
 
 const InventoryItems = () => {
     const { itemsId } = useParams();
@@ -10,7 +11,7 @@ const InventoryItems = () => {
 
     // To load specific data depending on specific id
     useEffect(() => {
-        const url = `https://electro-max-server.up.railway.app/items/${itemsId}`;
+        const url = `http://localhost:5000/items/${itemsId}`;
         fetch(url)
             .then((res) => res.json())
             .then((items) => setItem(items));
@@ -20,8 +21,8 @@ const InventoryItems = () => {
     const reduceQuantity = () => {
         const productQuantity = { quantity: quantity - 1 };
 
-        // send updated quantity to the server
-        const url = `https://electro-max-server.up.railway.app/items/${itemsId}`;
+        // send updated quantity to the server side
+        const url = `http://localhost:5000/items/${itemsId}`;
         fetch(url, {
             method: 'PUT',
             headers: {
@@ -32,7 +33,7 @@ const InventoryItems = () => {
             .then((res) => res.json())
             .then((data) => {
                 setItem(data);
-                alert('Quantity updated!!!');
+                swal('Quantity Updated!', '', 'success');
             });
     };
 
@@ -43,7 +44,7 @@ const InventoryItems = () => {
         const updatedStock = { quantity: quantity + newStockValue };
 
         //Send restock value to the server
-        const url = `https://electro-max-server.up.railway.app/items/${itemsId}`;
+        const url = `http://localhost:5000/items/${itemsId}`;
         fetch(url, {
             method: 'PUT',
             headers: {
@@ -54,7 +55,7 @@ const InventoryItems = () => {
             .then((res) => res.json())
             .then((data) => {
                 setItem(data);
-                alert('Item restocked!!!');
+                swal('Item Restocked!', '', 'success');
                 e.target.reset();
             });
     };
@@ -65,6 +66,7 @@ const InventoryItems = () => {
 
     return (
         <>
+            {/* ----------------items card----------------- */}
             <div className="container mb-5 mt-5">
                 <div className="card w-75 p-2 mx-auto">
                     <div className="row g-0">
@@ -96,6 +98,8 @@ const InventoryItems = () => {
                     </div>
                 </div>
             </div>
+
+            {/* ----------------restock form----------------- */}
             <div className="p-2 mb-4">
                 <div className="form-container mx-auto p-lg-5 rounded-4">
                     <Form onSubmit={increaseQuantity}>
