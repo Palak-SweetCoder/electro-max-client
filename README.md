@@ -1,33 +1,104 @@
-# WAREHOUSE AND INVENTORY MANAGEMENT WEBSITE
 
-## To see the live website: [ELECTRO MAX](https://electro-max.web.app/)
+# 🚀 Author:
 
-## PROJECT DESCRIPTION:
+# [Hi, I'm Palak! 👋](https://github.com/Palak-SweetCoder)
 
-This is a warehouse and inventory management website that is all-device responsive. Here you can update inventory items. You have to login before performing any type of interaction.
+![Logo](./src/assets/electro-git-banner.png)
+
+## Short Description:
+This is an inventory management website. Here are some inventory items with detailed information. A registered user can update the items' stock. The user can update the stocked item quantity by increasing or decreasing. Also, users can add their own items by using the add item route. Then the user can see their added item in the My Items route, and they have the ability to delete their added item.
+
+The user can register using the Google sign-in method or the email password-based sign-in method.
+
+There is also a route called Manage Inventories. The user will see all the inventory items there, and they can delete any item they want.
+
+## To see the live website: [Click Here](https://electro-max.web.app/)
+
+## Features
+
+👉 Dynamic content rendered using React components
+
+👉 Protected route with user authentication
+
+👉 Responsive design for optimal user experience on all devices
+
+👉 User authentication and authorization
+
+👉 Clean, organized codebase using modern JavaScript and React best practices
+
+👉 The MongoDB database used to store the data.
 
 
-You can sign up by using the Google sign-in method or the email password-based sign-up method.
+
+## Built With
+
+- [ReactJS](https://reactjs.org/) - JavaScript library for building user interfaces
+- [Bootstrap](https://getbootstrap.com/) - CSS framework for responsive design
+- [React bootstrap](https://react-bootstrap.github.io/) - CSS framework for responsive design
+- [React countup](https://github.com/glennreyes/react-countup) - A configurable React component for countup system
+- [React slick and slick carousel](https://react-slick.neostack.com/docs/get-started) - For a different, responsive and attractive carousel creation
+- [Sweetalert](https://sweetalert.js.org/guides/) - For responsive and attractive user interface (alert modal)
+- [React scrool trigger](https://github.com/ryanhefner/react-scroll-trigger) - React component that monitors scroll events to trigger callbacks when it enters, exits and progresses through the viewport.
+- [Google firebase](https://firebase.google.com/docs/auth/web/start) - Authentication system for users to sign in and register
+- [React firebase hooks](https://github.com/CSFrequency/react-firebase-hooks) - Authentication system for users to sign in and register
+- [React icons](https://react-icons.github.io/react-icons/) - To utilize ES6 imports that allow us to include only the icons that our project is using
+- [React toastify](https://fkhadra.github.io/react-toastify/introduction) - To show the user different messages and increase user experience
 
 
-You can change the quantity of the items by increasing or decreasing the quantity. You are also able to delete any of those items and add your own items.
+## Tech Stack
 
-### TECHNOLOGY USED
-#### FRONT-END:
-- HTML5
-- CSS3
-- Bootstrap5
-- JavaScript
-- ReactJS
-- React Bootstrap
-- React Toastify
-- React Slick Carousel
-- React Countup
-- React Firebase Hooks
-- Firebase Hosting
+**Client:** HTML5, CSS3, JavaScript, React, Bootstrap, React bootstrap
 
-#### BACK-END:
-- MongoDB
-- NodeJS
-- ExpressJS
-- [railway.app](https://railway.app/) to deploy NodeJS API code
+**Server:** NodeJS, Express, MongoDB
+
+## Run Locally
+
+Clone the project
+
+```bash
+  git clone https://link-to-project
+```
+
+Go to the project directory
+
+```bash
+  cd my-project
+```
+
+Install dependencies
+
+```bash
+  npm install
+```
+
+Start the server
+
+```bash
+  npm run start
+```
+
+
+## Environment Variables
+
+To run this project, you will need to add the following environment variables to the .env.local file
+
+`apiKey`
+
+`authDomain`
+
+`projectId`
+
+`storageBucket`
+
+`messagingSenderId`
+
+`appId`
+
+## Screenshots
+
+![App Screenshot](./src/assets/electro-max.png)
+
+
+## Feedback
+
+If you have any feedback, please reach out to me at pspalak6@gmail.com

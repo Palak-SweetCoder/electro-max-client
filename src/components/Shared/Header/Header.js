@@ -6,6 +6,7 @@ import auth from '../../../firebase.init';
 import { ToastContainer } from 'react-toastify';
 import 'react-toastify/dist/ReactToastify.css';
 import './Header.css';
+import { Link } from 'react-router-dom';
 
 const Header = () => {
     const [user] = useAuthState(auth);
@@ -18,7 +19,11 @@ const Header = () => {
         <>
             <Navbar collapseOnSelect expand="lg">
                 <Container>
-                    <Navbar.Brand className="fw-bold brand" href="/">
+                    <Navbar.Brand
+                        className="fw-bold brand"
+                        as={Link}
+                        to="/home"
+                    >
                         ELECTRO MAX
                     </Navbar.Brand>
                     <Navbar.Toggle aria-controls="responsive-navbar-nav" />

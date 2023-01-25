@@ -59,7 +59,7 @@ const SignUp = () => {
             });
             navigate('/');
         }
-    }, [user]);
+    }, [user, navigate]);
 
     if (loading || updating) {
         return (
