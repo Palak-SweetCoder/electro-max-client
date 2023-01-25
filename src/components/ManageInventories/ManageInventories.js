@@ -12,7 +12,7 @@ const ManageInventories = () => {
             'Are you sure you want to delete this item?'
         );
         if (proceed) {
-            const url = `http://localhost:5000/item/${id}`;
+            const url = `https://electro-max-server.up.railway.app/item/${id}`;
             fetch(url, {
                 method: 'DELETE',
             })
