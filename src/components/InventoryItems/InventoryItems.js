@@ -11,7 +11,7 @@ const InventoryItems = () => {
 
     // To load specific data depending on specific id
     useEffect(() => {
-        const url = `https://electro-max-server.up.railway.app/items/${itemsId}`;
+        const url = `https://defiant-hosiery-duck.cyclic.app/items/${itemsId}`;
         fetch(url)
             .then((res) => res.json())
             .then((items) => setItem(items));
@@ -22,7 +22,7 @@ const InventoryItems = () => {
         const productQuantity = { quantity: quantity - 1 };
 
         // send updated quantity to the server side
-        const url = `https://electro-max-server.up.railway.app/items/${itemsId}`;
+        const url = `https://defiant-hosiery-duck.cyclic.app/items/${itemsId}`;
         fetch(url, {
             method: 'PUT',
             headers: {
@@ -44,7 +44,7 @@ const InventoryItems = () => {
         const updatedStock = { quantity: quantity + newStockValue };
 
         //Send restock value to the server
-        const url = `https://electro-max-server.up.railway.app/items/${itemsId}`;
+        const url = `https://defiant-hosiery-duck.cyclic.app/items/${itemsId}`;
         fetch(url, {
             method: 'PUT',
             headers: {

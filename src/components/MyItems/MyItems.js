@@ -5,7 +5,7 @@ const MyItems = () => {
     const [myItems, setMyItems] = useState([]);
     // Get items from server
     useEffect(() => {
-        fetch('https://electro-max-server.up.railway.app/my-items')
+        fetch('https://defiant-hosiery-duck.cyclic.app/my-items')
             .then((res) => res.json())
             .then((data) => setMyItems(data));
     }, []);
@@ -16,7 +16,7 @@ const MyItems = () => {
             'Are you sure you want to delete this item?'
         );
         if (proceed) {
-            const url = `https://electro-max-server.up.railway.app/my-items/${id}`;
+            const url = `https://defiant-hosiery-duck.cyclic.app/my-items/${id}`;
             fetch(url, {
                 method: 'DELETE',
             })
